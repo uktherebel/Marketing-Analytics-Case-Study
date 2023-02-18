@@ -39,36 +39,6 @@ The final SQL output will have a single row for each customer and contain the ne
 
 To sum, the approach is to start with the final output, and work backwards to identify the necessary data points and processing steps to generate the final output.
 
-# Joining Multiple Tables 
-
-### Plan of Attack 
-#### 1. Defining Final State
-    - Key columns needed need to generate data points at `customer_id` were identified: `category_name`, `rental_count`, `average_comparison`, `percentile`, and `category_percentage`.
-> `category_name`: The name of the top 2 ranking categories  
-`rental_count`: How many total films have they watched in this category  
-`average_comparison`: How many more films has the customer watched compared to the average DVD Rental Co customer  
-`percentile`: How does the customer rank in terms of the top X% compared to all other customers in this film category?  
-`category_percentage`: What proportion of total films watched does this category make up?
-
-
-#### 2. Reverse Engineering 
-The `rental_count` was identified as the key value for the analysis, as it is used in all of the calculations. 
-
-Removing all the dependent calculated columns: `category_ranking`, `average_comparison`, `percentile` and `category_percentage` would give us the following table: 
-
-<img width="374" alt="Screenshot 2023-01-16 at 3 42 49 PM" src="https://user-images.githubusercontent.com/55969501/212659482-a8c43b33-92f7-4537-b13d-4d60d0a25e3f.png">
-
-**Problem**: Generating a table with only the top 2 categories for each customer and their `rental_count` values meant we wouldn't be able to calculate the fields (`average_comparison`, `percentile`, and `category_percentage`) that need to be compared against all customers and categories. 
-
-Therefore, to solve this problem, it was necessary to include all of the categories for each customer and not just the top 2.
-
-#### 3. Identifying Key Columns and Start & End Points
-To calculate the number of films that a customer has watched in a specific category, the key columns needed were `customer_id` and `category_name`. 
-
-The analysis began with the `dvd_rentals.rental` table as it was the only place where the `customer_id` field existed and the only place where it was possible to identify how many films a customer has watched. 
-
-However, the `dvd_rentals.rental` table did not include the `category_name` field, which was needed for the analysis. The only table that included the `category_name` field was the `dvd_rentals.category` table.  This marked the end point of the data joining journey. 
-
 #### 4. Mapping the Joining Journey
 Using the ERD analysis, it was deduced that a linear joining journey would be needed.
 
