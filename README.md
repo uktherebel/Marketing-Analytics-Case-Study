@@ -2,7 +2,7 @@
 # Overview 
 In this Marketing Analytics Case, we needed to generate necessary data points necessary to populate the template attached below for a fictional company, DVD Rental Co. To generate the relevant data points, I reverse-engineered the problem. 
 
-Skills Used: Data Wrangling, Statistical Distributions, ERD Analysis, Reverse Engineering, Window Functions, Hypotheses Validation
+**Skills Used**: Data Wrangling, Statistical Distributions, ERD Analysis, Reverse Engineering, Window Functions, Hypotheses Validation
 
 The requirements were as follows: 
 1. Top 2 Categories 
