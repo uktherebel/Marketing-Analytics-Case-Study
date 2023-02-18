@@ -39,19 +39,8 @@ The final SQL output will have a single row for each customer and contain the ne
 
 To sum, the approach is to start with the final output, and work backwards to identify the necessary data points and processing steps to generate the final output.
 
-#### 4. Mapping the Joining Journey
+# Mapping the Joining Journey
 Using the ERD analysis, it was deduced that a linear joining journey would be needed.
 
 <img width="501" alt="Screenshot 2023-01-16 at 3 54 22 PM" src="https://user-images.githubusercontent.com/55969501/212661681-0c8ebe9a-2266-45b1-b0d9-b250c3d2f1ca.png">
 
-### Framework for Analyzing Table Joins
-
-The following framework was used to analyze table joins: 
-
-1. What is the purpose of joining these two tables?  
-a. What contextual hypotheses do we have about the data?  
-b. How can we validate these assumptions?
-
-2. What is the distribution of foreign keys within each table?
-
-3. How many unique foreign key values exist in each table?
