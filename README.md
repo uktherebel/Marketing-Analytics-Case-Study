@@ -4,6 +4,8 @@ In this Marketing Analytics Case, we needed to generate necessary data points ne
 
 **Skills Used**: Data Wrangling, Statistical Distributions, ERD Analysis, Reverse Engineering, Window Functions, Hypotheses Validation
 
+**Note**: The final solution has not been uploaded yet. I'm still in the process of finishing the project.
+
 The requirements were as follows: 
 1. Top 2 Categories 
 > For each customer, we need to identify the top 2 categories for each customer based off their past rental history. These top categories will drive marketing creative images as seen in the travel and sci-fi examples in the draft email.
